@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: var(--font-poppins);
+}
+
+.fill-effect {
+  color: transparent;
+  background-image: linear-gradient(90deg, #BDBDBD 50%, #333333 50%);
+  background-position: 0;
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  transition: background-position 300ms ease-in-out;
+}
+
+.fill-parent:hover .fill-effect {
+  background-position: 100%;
+}
+
+.more-excercises__slider .arrow-left {
+ @apply cursor-pointer absolute top-[50%] transform translate-y-[-50%] xl:left-[-74px] lg:left-[-45px] md:left-[-45px];
+}
+
+.more-excercises__slider .arrow-right {
+  @apply cursor-pointer absolute top-[50%] transform translate-y-[-50%] xl:right-[-74px] lg:right-[-45px] md:right-[-45px];
+}
+ 
+
+@media only screen and (max-width: 862px) {
+  .more-excercises__slider .arrow-left {
+    @apply absolute top-[14px] left-[40%] translate-y-0;
+   }
+
+   .more-excercises__slider .arrow-right {
+    @apply absolute top-[14px] right-[40%] translate-y-0;
+   }
+}
+
+@media only screen and (max-width: 440px) {
+  .more-excercises__slider .arrow-left {
+    @apply left-[30%];
+   }
+   
+   .more-excercises__slider .arrow-right {
+    @apply right-[30%];
+   }
+}
+
+.more-blogs__slider .arrow-left {
+  @apply cursor-pointer absolute top-[50%] transform translate-y-[-50%] xl:left-[-74px] lg:left-[-45px] md:left-[-45px];
+ }
+ 
+ .more-blogs__slider .arrow-right {
+   @apply cursor-pointer absolute top-[50%] transform translate-y-[-50%] xl:right-[-74px] lg:right-[-45px] md:right-[-45px];
+ }
+  
+ 
+ @media only screen and (max-width: 862px) {
+   .more-blogs__slider .arrow-left {
+     @apply absolute top-[-54px] left-[40%] translate-y-0;
+    }
+ 
+    .more-blogs__slider .arrow-right {
+     @apply absolute top-[-54px] right-[40%] translate-y-0;
+    }
+ }
+ 
+ @media only screen and (max-width: 440px) {
+   .more-blogs__slider .arrow-left {
+     @apply left-[30%];
+    }
+    
+    .more-blogs__slider .arrow-right {
+     @apply right-[30%];
+    }
+ }
+
