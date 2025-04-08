@@ -1,15 +1,19 @@
+"use client"
+import { useState } from "react";
 import PageWrapper from "../PageWrapper/PageWrapper";
+import WaitlistModal from "../WaitlistModal/WaitlistModal";
 
 type Props = {
   mode?: "dark" | "light";
 };
 
 function SubscribeBanner({ mode = "dark" }: Props) {
+  const [isOpen, setOpen] = useState(false);
   return (
     <div
       className={`${
         mode === "dark"
-          ? "bg-cover bg-center bg-no-repeat bg-black"
+          ? "bg-cover bg-center bg-no-repeat bg-tertiary"
           : "bg-primary"
       } relative overflow-hidden`}
       style={{
@@ -29,32 +33,24 @@ function SubscribeBanner({ mode = "dark" }: Props) {
                 mode === "dark" ? "text-white" : "text-secondary"
               } uppercase font-extrabold text-[36px] leading-[64px]  `}
             >
-              Subscribe now
+              Make every workout count.
             </h2>
-            <p
-              className={`${
-                mode === "dark" ? "text-white opacity-60" : "text-secondary"
-              } xl:hidden block text-[16px] leading-[29px] tracking-[0.5px]`}
-            >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
-            </p>
           </div>
-          <p
-            className={`${
-              mode === "dark" ? "text-white opacity-60" : "text-secondary"
-            } text-[16px] leading-[29px] tracking-[0.5px] xl:block hidden`}
-          >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit
-          </p>
-          <button
-            className={`${
-              mode === "dark"
-                ? "text-secondary bg-primary"
-                : "text-white bg-secondary"
-            } relative z-[20] lg:w-auto w-[200px] text-[18px] leading-[22px] font-semibold px-[45px] py-[24px] lg:mt-0 mt-[132px]`}
-          >
-            Subscribe
-          </button>
+          
+          <>
+              <button
+                onClick={() => setOpen(true)}
+                className={`${
+                  mode === "dark"
+                    ? "text-secondary bg-primary"
+                    : "text-white bg-secondary"
+                } relative z-[20] lg:w-auto w-[200px] text-[18px] 
+                leading-[22px] font-semibold px-[45px] py-[24px] lg:mt-0 mt-[132px]`}
+              >
+                Join our Waitlist
+              </button>
+              <WaitlistModal open={isOpen} onOpenChange={setOpen} />
+            </>
         </div>
       </PageWrapper>
       <div

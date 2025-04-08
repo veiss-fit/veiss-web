@@ -4,10 +4,10 @@ import PageWrapper from "../PageWrapper/PageWrapper";
 function DescriptiveTabs() {
   const [selectedTab, setSelectedTab] = useState<number>(0);
 
-  const tabs = ["Mission", "Aproach", "Our plan"];
+  const tabs = ["Mission", "About", "Approach"];
 
   return (
-    <div className="w-full relative bg-[#F2F2F2]">
+    <div id="about-us" className="w-full h-screen relative bg-[#F2F2F2]">
       <PageWrapper>
         <div className="relative z-20 xl:px-[205px] lg:px-[80px] lg:pt-[195px] pt-[90px] md:pb-[400px] sm:pb-[360px] pb-[260px] lg:pb-[100px] flex lg:flex-row flex-col justify-between gap-[20px]">
           <div className="inline-flex lg:justify-start justify-center lg:flex-col flex-row sm:gap-[24px] gap-[16px] uppercase lg:text-[48px] font-[900] lg:leading-[64px] md:text-[36px] md:leading-[48px] text-[19px] leading-[28px] sm:text-[28px] sm:leading-[36px] text-[#BDBDBD]">
@@ -34,22 +34,20 @@ function DescriptiveTabs() {
               );
             })}
           </div>
-          <div className="mx-auto lg:mx-0 relative text-secondary tracking-[0.5px] sm:text-[16px] sm:leading-[29px] text-[14px] leading-[24px] sm:w-[395px] w-full">
+          <div className="mx-auto lg:mx-0 relative text-secondary tracking-[0.5px] sm:text-[16px] sm:leading-[29px] text-[14px] leading-[24px] sm:w-[495px] w-full">
             <div
               className={`${
                 selectedTab === 0 ? "opacity-1" : "opacity-0"
               } transition-opacity duration-300 ease-in-out lg:text-left text-center absolute lg:top-0 md:top-[60px] top-[40px] left-0 flex flex-col gap-[22px]`}
             >
               <h6 className="font-semibold lg:text-[24px] md:text-[20px] text-[18px]">
-                Improve your strength
+                Ease your Fitness Journey
               </h6>
               <p className="">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <p className="pt-[2px]">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              At Veiss, our mission is to empower individuals on their fitness journey by providing 
+              innovative technology that enhances motivation, consistency, and progress tracking in 
+              the gym. We strive to transform the workout experience, ensuring that every user can 
+              recognize their improvements and achieve their fitness goals with confidence and ease.
               </p>
             </div>
             <div
@@ -57,16 +55,19 @@ function DescriptiveTabs() {
                 selectedTab === 1 ? "opacity-1" : "opacity-0"
               } transition-opacity duration-300 ease-in-out lg:text-left text-center absolute lg:top-0 md:top-[60px] top-[40px] left-0 flex flex-col gap-[22px]`}
             >
-              <h6 className="font-semibold lg:text-[24px] md:text-[20px] text-[18px]">Our aproach</h6>
+              <h6 className="font-semibold lg:text-[24px] md:text-[20px] text-[18px]">What we do</h6>
               <p className="">
-                Random Text about the visible part of the stream ream peam,
-                heheh this is so random man :D i dont know what to do about
-                this.
+              Veiss offers a cutting-edge smart hardware attachment for weight machines that 
+              automatically tracks repetitions, sets, and overall progress. Our solution integrates 
+              seamlessly with existing gym equipment, providing users with real-time data and 
+              insights that keep them engaged and motivated. delivering continuous value and support 
+              to our users.
               </p>
               <p className="pt-[2px]">
-                Random Text about the visible part of the stream ream peam,
-                heheh this is so random man :D i dont know what to do about
-                this.
+              By eliminating the need for manual 
+              input, we make it easier for gym-goers to focus on their workouts and stay committed 
+              to their fitness objectives. Our accompanying app subscription unlocks advanced 
+              analytics and personalized progress tracking, 
               </p>
             </div>
             <div
@@ -74,15 +75,28 @@ function DescriptiveTabs() {
                 selectedTab === 2 ? "opacity-1" : "opacity-0"
               } transition-opacity duration-300 ease-in-out lg:text-left text-center absolute lg:top-0 md:top-[60px] top-[40px] left-0 flex flex-col gap-[22px]`}
             >
-              <h6 className="font-semibold lg:text-[24px] md:text-[20px] text-[18px]">This is our plan</h6>
+              <h6 className="font-semibold lg:text-[24px] md:text-[20px] text-[18px]">Our Approach</h6>
               <p className="">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              We utilize advanced sensor technology to create a smart hardware attachment 
+              that integrates effortlessly with existing gym equipment. Our system captures 
+              essential workout metrics and syncs them directly to users&lsquo; mobile devices,
+               providing:
               </p>
-              <p className="pt-[2px]">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
+              <ol className="pt-[2px] list-decimal pl-5 space-y-2">
+              <li>
+                Effortless Tracking: No manual input—just automatic, error-free logging.
+              </li>
+              <li>
+                Real-Time Insights: Instant feedback keeps workouts optimized and engaging.
+              </li>
+              <li>
+                User-Centric Design: Built for ease, motivation, and consistency.
+              </li>
+              <li>
+                Continuous Improvement: We evolve through ongoing user feedback.
+              </li>
+            </ol>
+
             </div>
           </div>
         </div>

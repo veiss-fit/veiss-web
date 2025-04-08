@@ -1,19 +1,19 @@
 import PageWrapper from "../PageWrapper/PageWrapper";
 
 import { useEffect, useRef, useState } from "react";
+import WaitlistModal from "../WaitlistModal/WaitlistModal";
 
 function HeroSlider() {
+  const [isOpen, setOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const timerRef = useRef<null | NodeJS.Timeout>(null);
 
   useEffect(() => {
     timerRef.current = setInterval(() => {
-      // Logika za promenu slajda svakih 5 sekundi
       setCurrentSlide((prevSlide) => (prevSlide + 1) % 3);
     }, 5000);
 
     return () => {
-      // Čišćenje timera kada se komponenta unmount-uje ili kada korisnik promeni slajd
       if (timerRef.current) {
         clearInterval(timerRef.current);
       }
@@ -21,10 +21,9 @@ function HeroSlider() {
   }, []);
 
   const handleDotClick = (index: number) => {
-    // Resetujemo timer koristeći ref
     if (timerRef.current) {
       clearInterval(timerRef.current);
-    } // Ponovo pokrećemo timer
+    } 
     timerRef.current = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % 3);
     }, 5000);
@@ -48,15 +47,15 @@ function HeroSlider() {
           >
             <div className="p-[5px] flex w-[329px] items-center justify-between gap-[15px] bg-white bg-opacity-[10%] rounded-[200px]">
               <p className="uppercase font-semibold text-[10px] leading-[18px] tracking-[1.5px] text-secondary bg-primary py-[4px] px-[10px] rounded-[200px]">
-                New
+                Consistent
               </p>
               <p className="text-white text-[12px] leading-[18px] spacing-[0.5px] pr-[10px]">
-                High Intensity workout to burn calories
+                Effortless tracking
               </p>
             </div>
             <h1 className="font-extrabold lg:text-[96px] lg:leading-[96px] text-[64px] leading-[64px] tracking-[0.5px] text-white uppercase 2xl:w-[60%] lg:w-[85%]">
-              Best program for{" "}
-              <span className="text-primary">best results</span>
+              Stay consistent{" "}
+              <span className="text-primary">with Veiss</span>
             </h1>
           </div>
           <div
@@ -66,14 +65,14 @@ function HeroSlider() {
           >
             <div className="p-[5px] flex w-[329px] items-center justify-between gap-[15px] bg-white bg-opacity-[10%] rounded-[200px]">
               <p className="uppercase font-semibold text-[10px] leading-[18px] tracking-[1.5px] text-secondary bg-primary py-[4px] px-[10px] rounded-[200px]">
-                Back
+                Easy
               </p>
               <p className="text-white text-[12px] leading-[18px] spacing-[0.5px] pr-[10px]">
-                Back training for the pain relief
+                Make fitness easier
               </p>
             </div>
             <h1 className="font-extrabold lg:text-[96px] lg:leading-[96px] text-[64px] leading-[64px] tracking-[0.5px] text-white uppercase 2xl:w-[60%] lg:w-[85%]">
-              Realease pain from your <span className="text-primary">back</span>
+              Workout made easy with <span className="text-primary">VEISS</span>
             </h1>
           </div>
           <div
@@ -113,9 +112,16 @@ function HeroSlider() {
               } cursor-pointer h-[8px] rounded-full transition-all ease-in-out duration-200`}
             ></div>
           </div>
-          <button className="z-20 font-bold uppercase absolute bottom-[-32px] text-secondary w-[206px] py-[20px] text-[16px] leading-[22px] bg-primary text-center">
-            Check prices
-          </button>{" "}
+          <>
+            <button
+              onClick={() => setOpen(true)}
+              className="z-20 font-bold uppercase absolute bottom-[-32px] text-secondary w-[206px] py-[20px] text-[16px] leading-[22px] bg-primary text-center"
+            >
+              Join our Waitlist
+            </button>
+            <WaitlistModal open={isOpen} onOpenChange={setOpen} />
+          </>
+          {/* <WaitlistFormEmbed/> */}
         </PageWrapper>
       </div>
       <div className="z-10 relative h-[50%] w-full flex-1 min-h-[460px]">

@@ -4,6 +4,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 
 import { Poppins } from "next/font/google";
+import { ConvexClientProvider } from "@/providers/ConvexProvider";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -35,9 +36,11 @@ export default async function RootLayout({
   return (
     <html lang={locale} className={poppins.variable}>
       <body>
+        <ConvexClientProvider>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <ReactQueryClientProvider>{children}</ReactQueryClientProvider>
         </NextIntlClientProvider>
+        </ConvexClientProvider>
       </body>
     </html>
   );

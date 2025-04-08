@@ -1,7 +1,7 @@
 import WebLayoutWrapper from "./components/Layout/layout";
 
 export const metadata = {
-  title: "Status Fitness",
+  title: "Veiss",
   description: "Description",
 };
 
