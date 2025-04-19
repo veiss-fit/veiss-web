@@ -2,7 +2,6 @@ import useStore from "@/store/store";
 import PageWrapper from "../PageWrapper/PageWrapper";
 import PaymentInformation from "../PaymentInformation/PaymentInformation";
 import PaymentSteps from "../PaymentSteps/PaymentSteps";
-import Stepper from "../Stepper/Stepper";
 import PaymentConfirmation from "../PaymentConfirmation/PaymentConfirmation";
 
 function PaymentProcess() {
@@ -16,7 +15,6 @@ function PaymentProcess() {
           <h1 className="md:leading-[64px] md:text-[64px] text-[48px] leading-[48px] text-center font-[900] text-white uppercase">
             Payment
           </h1>
-          <Stepper steps={steps} />
           {paymentActiveStep == 0 && <PaymentInformation />}
           {paymentActiveStep == 1 && <PaymentConfirmation />}
         </div>
