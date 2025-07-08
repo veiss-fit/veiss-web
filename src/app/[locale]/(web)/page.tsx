@@ -18,8 +18,8 @@ export default function Home() {
       <SubscribeBanner />
       {/* <PricingList /> */}
       {/* <Testemonial /> */}
-      {/* <TeamNumbers />
-      <OurTeam /> */}
+      <TeamNumbers />
+      {/* <OurTeam /> */}
       {/* <ShowcaseVideo /> */}
       {/* <StartExcercising /> */}
     </div>
