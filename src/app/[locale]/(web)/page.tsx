@@ -19,7 +19,7 @@ export default function Home() {
       {/* <PricingList /> */}
       {/* <Testemonial /> */}
       <TeamNumbers />
-      {/* <OurTeam /> */}
+      <OurTeam />
       {/* <ShowcaseVideo /> */}
       {/* <StartExcercising /> */}
     </div>
