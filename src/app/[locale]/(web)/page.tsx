@@ -21,7 +21,7 @@ export default function Home() {
       <TeamNumbers />
       <OurTeam />
       {/* <ShowcaseVideo /> */}
-      {/* <StartExcercising /> */}
+      <StartExcercising />
     </div>
   );
 }

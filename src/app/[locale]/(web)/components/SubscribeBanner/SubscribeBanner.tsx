@@ -43,7 +43,7 @@ function SubscribeBanner({ mode = "dark" }: Props) {
               mode === "dark"
                 ? "text-secondary bg-primary hover:bg-primary/90"
                 : "text-white bg-secondary hover:bg-secondary/90"
-            } relative z-[20] mt-8 lg:mt-0 lg:w-[140px] sm:w-[100px] text-[12px] sm:text-[18px] leading-[20px] sm:leading-[22px] font-semibold px-6 py-4 rounded`}
+            } relative z-[20] mt-8 lg:mt-0 lg:w-[250px] sm:w-[100px] text-[12px] sm:text-[18px] leading-[20px] sm:leading-[22px] font-semibold px-6 py-4 rounded`}
           >
             Join our Waitlist
           </button>
