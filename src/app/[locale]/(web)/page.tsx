@@ -14,8 +14,8 @@ export default function Home() {
   return (
     <div>
       <HeroSlider />
-      {/* <DescriptiveTabs />
-      <SubscribeBanner /> */}
+      <DescriptiveTabs />
+      <SubscribeBanner />
       {/* <PricingList /> */}
       {/* <Testemonial /> */}
       {/* <TeamNumbers />
