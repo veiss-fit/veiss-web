@@ -56,7 +56,7 @@ function OurTeam() {
                 </div>
               </div>
               <p className="text-secondary text-[12px] leading-[12px] tracking-[1.5px] uppercase text-center sm:text-left">
-                Software Lead
+                Tech Lead
               </p>
               <h4 className="pb-[18px] border-b border-b-[#070709] text-[20px] leading-[29px] tracking-[0.5px] font-semibold text-secondary text-center sm:text-left">
                 Gokul Reghunath
