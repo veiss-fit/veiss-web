@@ -54,7 +54,8 @@ function HeroSlider() {
               <h1 className="font-extrabold text-[36px] leading-[40px] sm:text-[64px] sm:leading-[64px] lg:text-[96px] lg:leading-[96px] tracking-[0.5px] text-white uppercase w-full sm:w-[90%] lg:w-[85%] 2xl:w-[60%]">
                 {index === 0 && (
                   <>
-                    Stay consistent <span className="text-primary">with Veiss</span>
+                    <span className="whitespace-nowrap">Stay consistent</span>{" "}
+                    <span className="text-primary whitespace-nowrap">with Veiss</span>
                   </>
                 )}
                 {index === 1 && (
