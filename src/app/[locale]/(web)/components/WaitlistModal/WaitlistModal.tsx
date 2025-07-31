@@ -11,9 +11,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useMutation } from "convex/react";
-import { api } from "../../../../../../convex/_generated/api"; 
+import { api } from "../../../../../../convex/_generated/api";
 
-export default function FeedbackModal({
+export default function WaitlistModal({
   open,
   onOpenChange,
 }: {
@@ -26,8 +26,8 @@ export default function FeedbackModal({
   const [experience, setExperience] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
-  
-  const submitFeedback = useMutation(api.waitlist.createWaitlistEntry);
+
+  const createWaitlistEntry = useMutation(api.waitlist.createWaitlistEntry);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -40,7 +40,7 @@ export default function FeedbackModal({
     }
 
     try {
-      await submitFeedback({ name, email, age, experience });
+      await createWaitlistEntry({ name, email, age, experience });
       setError("");
       setSubmitted(true);
 
@@ -49,8 +49,9 @@ export default function FeedbackModal({
       setAge("");
       setExperience("");
     } catch (err) {
-      setError("Failed to submit. Please try again.");
       console.error(err);
+      setError("Failed to submit. Please try again.");
+      setSubmitted(false);
     }
   };
 
