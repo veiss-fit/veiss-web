@@ -2,6 +2,7 @@ import ReactQueryClientProvider from "@/providers/ReactQueryClientProvider";
 import "../globals.css";
 import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
+import { Toaster } from "@/components/ui/toaster";
 
 import { Poppins } from "next/font/google";
 import { ConvexClientProvider } from "@/providers/ConvexProvider";
@@ -39,6 +40,7 @@ export default async function RootLayout({
         <ConvexClientProvider>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <ReactQueryClientProvider>{children}</ReactQueryClientProvider>
+          <Toaster />
         </NextIntlClientProvider>
         </ConvexClientProvider>
       </body>

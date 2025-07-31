@@ -11,123 +11,115 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useMutation } from "convex/react";
-import { api } from "../../../../../../convex/_generated/api";
+import { api } from "../../../../../../convex/_generated/api"; 
 
-type WaitlistModalProps = {
-  open: boolean;
-  onOpenChange: (open: boolean) => void;
-};
-
-export default function WaitlistModal({
+export default function FeedbackModal({
   open,
   onOpenChange,
-}: WaitlistModalProps) {
-  const [formValid, setFormValid] = useState(false);
+}: {
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+}) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [age, setAge] = useState("");
   const [experience, setExperience] = useState("");
-
-  const createWaitlistEntry = useMutation(api.waitlist.createWaitlistEntry);
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
+  
+  const submitFeedback = useMutation(api.waitlist.createWaitlistEntry);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    try {
-      await createWaitlistEntry({
-        name,
-        email,
-        age,
-        experience,
-      });
-      console.log("Form submitted and data added to the waitlist!");
-      onOpenChange(false);
-    } catch (error) {
-      console.error("Error submitting the form:", error);
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setError("Please enter a valid email address.");
+      setSubmitted(false);
+      return;
     }
-  };
 
-  const checkFormValidity = (e: React.FormEvent) => {
-    const form = e.target as HTMLFormElement;
-    setFormValid(form.checkValidity());
+    try {
+      await submitFeedback({ name, email, age, experience });
+      setError("");
+      setSubmitted(true);
+
+      setName("");
+      setEmail("");
+      setAge("");
+      setExperience("");
+    } catch (err) {
+      setError("Failed to submit. Please try again.");
+      console.error(err);
+    }
   };
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-[90vw] sm:max-w-[425px] w-full max-h-[90vh] overflow-y-auto">
+      <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle className="text-lg sm:text-xl text-center">
-            Waitlist Sign Up
-          </DialogTitle>
+          <DialogTitle>Join our Waitlist!</DialogTitle>
         </DialogHeader>
-        <form
-          onSubmit={handleSubmit}
-          onChange={checkFormValidity}
-          className="space-y-4"
-        >
-          <div className="space-y-2">
-            <Label htmlFor="name">
-              Name <span className="text-red-500">*</span>
-            </Label>
+
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div>
+            <Label htmlFor="name">Name</Label>
             <Input
               id="name"
-              required
-              placeholder="Enter your name"
               value={name}
               onChange={(e) => setName(e.target.value)}
+              required
             />
           </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="email">
-              Email <span className="text-red-500">*</span>
-            </Label>
+          <div>
+            <Label htmlFor="email">Email</Label>
             <Input
               id="email"
               type="email"
-              required
-              placeholder="Enter your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              required
             />
           </div>
 
-          <div className="grid sm:grid-cols-2 grid-cols-1 gap-4">
-            <div className="space-y-2">
-              <Label htmlFor="age">
-                Age <span className="text-red-500">*</span>
-              </Label>
-              <Input
-                id="age"
-                type="number"
-                required
-                min="1"
-                max="120"
-                placeholder="Your age"
-                value={age}
-                onChange={(e) => setAge(e.target.value)}
-              />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="experience">
-                Years of Experience <span className="text-red-500">*</span>
-              </Label>
-              <Input
-                id="experience"
-                type="number"
-                required
-                min="0"
-                max="100"
-                placeholder="Years at gym"
-                value={experience}
-                onChange={(e) => setExperience(e.target.value)}
-              />
-            </div>
+          <div>
+            <Label htmlFor="age">Age</Label>
+            <Input
+              id="age"
+              type="number"
+              min="0"
+              value={age}
+              onChange={(e) => setAge(e.target.value)}
+              required
+            />
           </div>
 
-          <Button type="submit" className="w-full mt-2" disabled={!formValid}>
+          <div>
+            <Label htmlFor="experience">Years of Experience at the Gym</Label>
+            <Input
+              id="experience"
+              type="number"
+              min="0"
+              value={experience}
+              onChange={(e) => setExperience(e.target.value)}
+              required
+            />
+          </div>
+
+          <Button type="submit" className="w-full">
             Submit
           </Button>
+
+          {error && (
+            <p className="text-red-600 text-sm text-center mt-2">{error}</p>
+          )}
+
+          {submitted && (
+            <p className="text-green-600 text-sm text-center mt-2">
+              Waitlist joined successfully!
+            </p>
+          )}
         </form>
       </DialogContent>
     </Dialog>
