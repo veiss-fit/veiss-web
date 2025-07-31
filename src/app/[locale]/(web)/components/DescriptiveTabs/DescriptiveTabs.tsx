@@ -42,15 +42,13 @@ function DescriptiveTabs() {
               } transition-opacity duration-300 ease-in-out text-center lg:text-left flex flex-col gap-[20px]`}
             >
               <h6 className="font-semibold text-[16px] md:text-[20px] lg:text-[24px]">
-                Ease your Fitness Journey
+                  Empowering Smarter Lifting 
               </h6>
               <p>
-                At Veiss, our mission is to empower individuals on their fitness
-                journey by providing innovative technology that enhances
-                motivation, consistency, and progress tracking in the gym. We
-                strive to transform the workout experience, ensuring that every
-                user can recognize their improvements and achieve their fitness
-                goals with confidence and ease.
+                  At Veiss, our mission is to make strength training more effective, 
+                  motivating, and rewarding. By combining smart gym technology with 
+                  intuitive insights, we help users see real progress. No more 
+                  guesswork or burnout—just clear, measurable growth, every step of the way.
               </p>
             </div>
 
@@ -64,17 +62,15 @@ function DescriptiveTabs() {
                 What we do
               </h6>
               <p>
-                Veiss offers a cutting-edge smart hardware attachment for weight
-                machines that automatically tracks repetitions, sets, and
-                overall progress. Our solution integrates seamlessly with
-                existing gym equipment, providing users with real-time data and
-                insights that keep them engaged and motivated.
+                  Veiss is a smart hardware and software solution that transforms 
+                  traditional weight machines into intelligent training partners. 
+                  Our compact device attaches to gym equipment to automatically track 
+                  reps, sets, tempo, and form. 
               </p>
               <p>
-                By eliminating the need for manual input, we make it easier for
-                gym-goers to focus on their workouts and stay committed to their
-                fitness objectives. Our accompanying app subscription unlocks
-                advanced analytics and personalized progress tracking.
+                  Paired with our app, users get real-time performance insights, 
+                  personalized feedback, and milestone tracking that keeps them 
+                  engaged and motivated—session after session.
               </p>
             </div>
 
@@ -85,28 +81,27 @@ function DescriptiveTabs() {
               } transition-opacity duration-300 ease-in-out text-center lg:text-left flex flex-col gap-[20px]`}
             >
               <h6 className="font-semibold text-[16px] md:text-[20px] lg:text-[24px]">
-                Our Approach
+                How We Do It 
               </h6>
               <p>
-                We utilize advanced sensor technology to create a smart hardware
-                attachment that integrates effortlessly with existing gym
-                equipment. Our system captures essential workout metrics and
-                syncs them directly to users&lsquo; mobile devices, providing:
+                We engineer sensor-driven hardware that effortlessly attaches to 
+                weight machines and connects wirelessly to our mobile app. 
+                The system captures every rep, tempo, and range of motion—giving 
+                users instant, actionable feedback without interrupting their workouts.
               </p>
               <ol className="list-disc list-inside pl-5 space-y-2 text-center mx-auto w-fit sm:text-left">
                 <li>
-                  Effortless Tracking: No manual input—just automatic, error-free
-                  logging.
+                  Effortless Tracking - Fully automatic. Just lift. 
                 </li>
                 <li>
-                  Real-Time Insights: Instant feedback keeps workouts optimized
-                  and engaging.
+                  Instant Feedback - Optimize performance in real time. 
                 </li>
                 <li>
-                  User-Centric Design: Built for ease, motivation, and
-                  consistency.
+                  Designed for Lifters - Built for motivation and ease of use. 
                 </li>
-                <li>Continuous Improvement: We evolve through ongoing user feedback.</li>
+                <li>
+                  Driven by Feedback - Constantly evolving with user input.
+                </li>
               </ol>
             </div>
           </div>
