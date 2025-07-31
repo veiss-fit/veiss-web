@@ -149,7 +149,7 @@ export default function MeetVeiss() {
     {/* Feedback Cards */}
     <div className="space-y-6">
     <p>Get real-time tips through your Veiss app, personalized to your work-out style and goals.
-        Here's an example of feedback you might receive after a workout:
+        Here&apos;s an example of feedback you might receive after a workout:
     </p>
       <div className="bg-white text-black rounded-xl p-6 shadow-lg">
         <h3 className="text-xl font-extrabold mb-2">Analysis</h3>
@@ -157,7 +157,7 @@ export default function MeetVeiss() {
       </div>
       <div className="bg-white text-black rounded-xl p-6 shadow-lg">
         <h3 className="text-xl font-extrabold mb-2">Feedback</h3>
-        <p className="text-lg italic">Let’s work on slowing down on the eccentric to 4s</p>
+        <p className="text-lg italic">Let&apos;s work on slowing down on the eccentric to 4s</p>
       </div>
     </div>
     </div>
